@@ -17,4 +17,4 @@ Points to a buffer that zeros are copied into.
 n 
 Is the number of zeros to be copied into the buffer.
 |---------------------------------------------------|
-
+The memcpy function is used to copy a block of data from a source address to a destination address.
