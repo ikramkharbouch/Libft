@@ -10,11 +10,14 @@ This function copies ch (represented as unsigned char) into the first n characte
 memset() returns a pointer to the block of memory.
 |---------------------------------------------------------------------------------------------------------------------------------|
 It’s a type which is used to represent sizes of objects in bytes
-|---------------------------------------------------------------|
+|---------------------------------------------------------------------------------------------------------------------------------|
 The bzero() function copies n bytes, each with a value of zero, into string s.
 s 
 Points to a buffer that zeros are copied into.
 n 
 Is the number of zeros to be copied into the buffer.
-|---------------------------------------------------|
+|---------------------------------------------------------------------------------------------------------------------------------|
 The memcpy function is used to copy a block of data from a source address to a destination address.
+|---------------------------------------------------------------------------------------------------------------------------------|
+     memccpy -- copy string until character found.
+|---------------------------------------------------------------------------------------------------------------------------------|
