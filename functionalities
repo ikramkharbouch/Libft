@@ -1,0 +1,14 @@
+|--------------------------------------------------------------------------------------------------------------------------------|
+memset : str = pointer to the object or block of memory that needs to be set
+
+ch = value that is copied, converted to unsigned char
+
+n = number of bytes to be set
+
+This function copies ch (represented as unsigned char) into the first n characters of the object or memory block pointed by str.
+
+memset() returns a pointer to the block of memory.
+|---------------------------------------------------------------------------------------------------------------------------------|
+It’s a type which is used to represent sizes of objects in bytes
+|---------------------------------------------------------------|
+
