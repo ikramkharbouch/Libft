@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memset.c                                   :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 13:36:52 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 15:59:01 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/28 22:02:27 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/28 23:25:42 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/libft.h"
 
-#include "includes/libft.h"
-
-int		main()
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char s[] = "hello";
-	printf("%s",ft_memset(s,'*',2));
-	return (0);
+	unsigned char	*ds;
+	unsigned char	temp[len];
+	unsigned char	*sr;
+	size_t			i;
+
+	i = 0;
+	ds = dst;
+	sr = (void *)src;
+	while (i < len)
+	{
+		temp[i] = sr[i];
+		i++;
+	}
+	i = 0;
+	while (i < len)
+	{
+		ds[i] = temp[i];
+		i++;
+	}
+	return (ds);
 }

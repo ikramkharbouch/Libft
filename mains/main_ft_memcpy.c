@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memset.c                                   :+:      :+:    :+:   */
+/*   main_ft_memcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 13:36:52 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 15:59:01 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/28 16:44:38 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/28 18:28:22 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/libft.h"
 
-#include "includes/libft.h"
-
-int		main()
+int	main(void)
 {
-	unsigned char s[] = "hello";
-	printf("%s",ft_memset(s,'*',2));
+	char original[50];
+	char new[50];
+	
+	strcpy(original, "12345");
+	ft_memcpy(new, original, 3);
+	new[3] = '\0';
+	printf("%s\n", new);
 	return (0);
 }

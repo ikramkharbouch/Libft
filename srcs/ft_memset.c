@@ -6,11 +6,11 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 12:38:07 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 13:49:10 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/03/28 15:59:57 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "../includes/libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

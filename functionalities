@@ -23,3 +23,5 @@ The memcpy function is used to copy a block of data from a source address to a d
 |---------------------------------------------------------------------------------------------------------------------------------|
 memmove() is used to copy a block of memory from a location to another. It is declared in string.h
 |---------------------------------------------------------------------------------------------------------------------------------|
+const is a contract. By receiving a const int * parameter, you "tell" the caller that you (the called function) will not modify the objects the pointer points to.
+|---------------------------------------------------------------------------------------------------------------------------------|

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memset.c                                   :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 13:36:52 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 15:59:01 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/28 13:59:00 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/28 23:25:13 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/libft.h"
 
-#include "includes/libft.h"
-
-int		main()
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char s[] = "hello";
-	printf("%s",ft_memset(s,'*',2));
-	return (0);
+	ft_memset(s, '\0', n);
 }
