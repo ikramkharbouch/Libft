@@ -6,13 +6,13 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 21:53:29 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/27 21:56:13 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/03/28 13:38:10 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-void	 *memset(void *b, int c, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif
