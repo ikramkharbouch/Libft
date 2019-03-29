@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memmove.c                                  :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 23:16:41 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/29 17:37:23 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/29 09:42:21 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/29 10:07:55 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main()
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char src[50];
-	//(void)char dest[50];
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	strcpy(src, "abcd");
-	memmove(src,  src + 10 , 20);
-	ft_memmove(src, src + 10, 20);
-	printf("theirs: %s\n", src);
-	printf("ours: %s\n", src);
-	return (0);
+	(void)n;
+	str1 = (void *)s1;
+	str2 = (void *)s2;
+	while (*str1 && *str2 && *str1 == *str2)
+	{
+		str1++;
+		str2++;
+	}
+	return (*str1 - *str2);
 }

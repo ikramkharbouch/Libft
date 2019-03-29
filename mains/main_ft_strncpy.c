@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memmove.c                                  :+:      :+:    :+:   */
+/*   main_ft_strncpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 23:16:41 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/29 17:37:23 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/29 11:37:44 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/29 11:50:08 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 int		main()
 {
-	char src[50];
-	//(void)char dest[50];
+	char *src;
+	char dest[100];
 
-	strcpy(src, "abcd");
-	memmove(src,  src + 10 , 20);
-	ft_memmove(src, src + 10, 20);
-	printf("theirs: %s\n", src);
-	printf("ours: %s\n", src);
+	src = "12345";
+	printf("%s\n", ft_strncpy(dest, src, 2));
+	printf("%s\n", strncpy(dest, src, 2));
 	return (0);
 }

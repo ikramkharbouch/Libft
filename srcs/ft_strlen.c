@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memmove.c                                  :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 23:16:41 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/29 17:37:23 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/29 10:15:22 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/29 10:26:06 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main()
+size_t	ft_strlen(const char *s)
 {
-	char src[50];
-	//(void)char dest[50];
+	size_t	i;
 
-	strcpy(src, "abcd");
-	memmove(src,  src + 10 , 20);
-	ft_memmove(src, src + 10, 20);
-	printf("theirs: %s\n", src);
-	printf("ours: %s\n", src);
-	return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memmove.c                                  :+:      :+:    :+:   */
+/*   main_ft_strncat.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 23:16:41 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/29 17:37:23 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/29 14:39:34 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/29 14:46:06 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int		main()
 {
-	char src[50];
-	//(void)char dest[50];
-
-	strcpy(src, "abcd");
-	memmove(src,  src + 10 , 20);
-	ft_memmove(src, src + 10, 20);
-	printf("theirs: %s\n", src);
-	printf("ours: %s\n", src);
+	char *src;
+	char *dest;
+	
+	src = (char *)malloc(sizeof(char) * 100);
+	dest = (char *)malloc(sizeof(char) * 100);
+	ft_strcpy(src, "test");
+	ft_strcpy(dest, "1337");
+	printf("%s\n", strncat(dest, src, 3));
+	printf("%s\n", ft_strncat(dest, src, 3));
 	return (0);
 }
