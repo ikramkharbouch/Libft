@@ -26,6 +26,6 @@ char	*ft_strcat(char *s1, const char *s2)
 		i++;
 	}
 	s1[len1 + i] = '\0';
-	free((char *)s2);
+	free((void *)s2);
 	return (s1);
 }

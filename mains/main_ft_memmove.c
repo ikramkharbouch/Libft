@@ -15,7 +15,6 @@
 int		main()
 {
 	char src[50];
-	//(void)char dest[50];
 
 	strcpy(src, "abcd");
 	memmove(src,  src + 10 , 20);

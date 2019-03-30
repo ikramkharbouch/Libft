@@ -15,7 +15,7 @@
 int		main()
 {
 	char string[] = "12345";
-	printf("%s\n",(char *)memchr(string, '0', 5));
-	printf("%s\n",(char *)ft_memchr(string, '0', 5));
+	printf("|%s|\n",(char *)memchr(string, '0', 5));
+	printf("|%s|\n",(char *)ft_memchr(string, '0', 5));
 	return (0);
 }
