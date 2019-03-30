@@ -39,5 +39,6 @@ int     ft_isascii(int c);
 int     ft_isprint(int c);
 int     ft_tolower(int arg);
 char    *ft_strchr(const char *s, int c);
+char    *ft_strrchr(const char *s, int c);
 
 #endif
