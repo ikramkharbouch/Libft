@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strncpy.c                                  :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/29 11:37:44 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/30 15:17:21 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/30 20:33:44 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/30 21:13:27 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main()
+int		ft_atoi(const char *str)
 {
-	char *src;
-	char dest[100];
+	int i;
+	int s;
+	int sign;
 
-	src = "12345";
-	printf("|%s|\n", ft_strncpy(dest, src, 2));
-	printf("|%s|\n", strncpy(dest, src, 2));
-	return (0);
+	i = 0;
+	s = 0;
+	sign = 1;
+	if (str[0] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	while (str[i] == '+' || str[i] == '-' || str[i] == ' ' || str[i] == '\t')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		s = s * 10 + str[i] - '0';
+		i++;
+	}
+	return (s * sign);
 }

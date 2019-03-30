@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strncpy.c                                  :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/29 11:37:44 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/30 15:17:21 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/30 20:08:45 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/30 20:32:38 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main()
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char *src;
-	char dest[100];
+	size_t	i;
 
-	src = "12345";
-	printf("|%s|\n", ft_strncpy(dest, src, 2));
-	printf("|%s|\n", strncpy(dest, src, 2));
-	return (0);
+	i = 0;
+	while (*s1 && *s2 && *s1 == *s2 && i < n)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }

@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/30 15:35:34 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/30 19:19:35 by ikrkharb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int     ft_tolower(int arg)
+int		ft_tolower(int arg)
 {
-    if (arg >= 'A' && arg <= 'Z')
-        arg += 32;
-    return (arg);
+	if (arg >= 'A' && arg <= 'Z')
+		arg += 32;
+	return (arg);
 }

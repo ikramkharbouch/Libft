@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 14:52:06 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/29 16:39:47 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/03/30 21:12:12 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		j++;
 	}
 	if (i + j < size)
-		dst[i + j] = '\0'; 
+		dst[i + j] = '\0';
 	return (i + ft_strlen(src));
 }
