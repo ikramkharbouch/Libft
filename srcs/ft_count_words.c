@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/31 20:12:33 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/02 14:40:25 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/02 21:58:06 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/02 22:37:38 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char		*ft_strmap(char const *s, char (*f)(char))
+int			ft_is_whitespace(char c)
 {
-	char	*str;
-	int		i;
+	return (c == ' ' || c == '\n' || c == '\t');
+}
 
-	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	i = 0;
-	while (s[i])
-	{
-		str[i] = (*f)(s[i]);
-		i++;
-	}
+char		*ft_strltrim(char *str)
+{
+	while (ft_is_whitespace(*str))
+		str++;
 	return (str);
-} 
+}
+
+int			ft_count_words(char *str)
+{
+	int		count;
+
+	count = 0;
+	while (*str)
+	{
+		str = ft_strltrim(str);
+		if (*str)
+		{
+			while (*str && !ft_is_whitespace(*str))
+				str++;
+			count++;
+		}
+	}
+	return (count);
+}
