@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 20:12:33 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/02 14:40:25 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/03 17:43:01 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ char		*ft_strmap(char const *s, char (*f)(char))
 		i++;
 	}
 	return (str);
-} 
+}

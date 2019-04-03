@@ -1,34 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main_ft_strsplit.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 14:07:19 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/03 17:44:22 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/03 17:16:05 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/03 17:25:44 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char		*ft_strstr(const char *haystack, const char *needle)
-{
-	char	*tmp;
-	int		i;
-
-	i = 0;
-	while (*haystack)
-	{
-		tmp = haystack;
-		while (*haystack == needle[i] && needle[i])
-		{
-			haystack++;
-			i++;
-		}
-		if (!(needle[i]))
-			return (tmp);
-		haystack = tmp + 1;
-	}
-	return (NULL);
-}

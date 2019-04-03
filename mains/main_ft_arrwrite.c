@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main_ft_arrwrite.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 14:07:19 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/03 17:44:22 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/03 17:25:57 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/03 17:33:39 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char		*ft_strstr(const char *haystack, const char *needle)
+int		main()
 {
-	char	*tmp;
-	int		i;
+	char **names;
 
-	i = 0;
-	while (*haystack)
-	{
-		tmp = haystack;
-		while (*haystack == needle[i] && needle[i])
-		{
-			haystack++;
-			i++;
-		}
-		if (!(needle[i]))
-			return (tmp);
-		haystack = tmp + 1;
-	}
-	return (NULL);
+	names = (char **)malloc(sizeof(char *) * 3);
+	names[0] = "abc";
+	names[1] = "bcg";
+	ft_arrwrite(names, 2, 3);
+	return (0);
 }

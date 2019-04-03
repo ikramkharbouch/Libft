@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_arrwrite.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 14:07:19 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/03 17:44:22 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/03 17:17:13 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/03 17:41:46 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char		*ft_strstr(const char *haystack, const char *needle)
+void	ft_arrwrite(char **arr, int f, int s)
 {
-	char	*tmp;
-	int		i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (*haystack)
+	j = 0;
+	while (i < f)
 	{
-		tmp = haystack;
-		while (*haystack == needle[i] && needle[i])
+		j = 0;
+		while (j < s)
 		{
-			haystack++;
-			i++;
+			write(1, &arr[i][j], 1);
+			j++;
 		}
-		if (!(needle[i]))
-			return (tmp);
-		haystack = tmp + 1;
+		write(1, "\n", 1);
+		i++;
 	}
-	return (NULL);
 }

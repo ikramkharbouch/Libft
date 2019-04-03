@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 14:07:19 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/03 17:44:22 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/03 13:20:27 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/03 17:44:33 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char		*ft_strstr(const char *haystack, const char *needle)
+char	**ft_strsplit(char const *s, char c)
 {
+	char	**arr;
 	char	*tmp;
 	int		i;
+	int		j;
 
+	arr = (char **)malloc(sizeof(char *) * (ft_count_words(s) + 1));
+	tmp = ft_strtrim(s);
 	i = 0;
-	while (*haystack)
+	while (*tmp)
 	{
-		tmp = haystack;
-		while (*haystack == needle[i] && needle[i])
+		j = 0;
+		while (!ft_is_whitespace(*tmp))
 		{
-			haystack++;
-			i++;
+			arr[i][j] = *tmp;
+			j++;
+			tmp++;
 		}
-		if (!(needle[i]))
-			return (tmp);
-		haystack = tmp + 1;
+		if (j)
+			i++;
+		tmp++;
 	}
-	return (NULL);
+	free(tmp);
+	return (arr);
 }
