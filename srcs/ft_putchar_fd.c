@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memset.c                                   :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 13:36:52 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 15:59:01 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/03 18:18:05 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/07 13:06:22 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/libft.h"
 
-#include "includes/libft.h"
-
-int		main()
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char s[] = "hello";
-	printf("%s",ft_memset(s,'*',2));
-	return (0);
+	write(fd, &c, 1);
 }

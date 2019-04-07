@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 19:10:19 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/31 20:08:13 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/06 22:45:40 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void				ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int				i;
-	unsigned int	length;
+	int	i;
 
 	i = 0;
-	length = ft_strlen(s);
 	while (s[i])
 	{
-		(*f)(length, &s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }

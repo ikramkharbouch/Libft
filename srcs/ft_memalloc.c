@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 11:55:25 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/31 18:27:38 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/06 22:10:54 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void		*ft_memalloc(size_t size)
 {
-	char	*tmp;
+	void	*mem;
 
-	if (!(tmp = (char *)malloc(sizeof(char) * size)))
+	mem = malloc(size);
+	if (!mem)
 		return (NULL);
-	tmp[size] = 0;
-	return (tmp);
+	ft_bzero(mem, size);
+	return (mem);
 }

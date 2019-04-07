@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 14:31:29 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/02 14:32:06 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/06 22:50:10 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	return (!(strcmp(s1, s2)) ? 1 : 0);
+	return (!strcmp(s1, s2));
 }

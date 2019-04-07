@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memmove.c                                  :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 23:16:41 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/29 17:37:23 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/06 23:48:08 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/07 13:15:42 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main()
+int		ft_power(int nb, int pow)
 {
-	char src[50];
+	int i;
+	int q;
 
-	strcpy(src, "abcd");
-	memmove(src,  src + 10 , 20);
-	ft_memmove(src, src + 10, 20);
-	printf("theirs: %s\n", src);
-	printf("ours: %s\n", src);
-	return (0);
+	i = 0;
+	q = 1;
+	while (i < pow)
+	{
+		q = nb * q;
+		i++;
+	}
+	return (q);
 }

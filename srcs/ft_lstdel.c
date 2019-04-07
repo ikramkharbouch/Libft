@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_bzero.c                                    :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 14:11:46 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 16:20:33 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/05 14:01:23 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/07 15:03:52 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-
-int		main()
+void		ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	unsigned char str[]="hello";
-	unsigned char str1[] = "kill";
-	ft_bzero(str,2);
-	printf("our function output: %s",str);
-	bzero(str1,2);
-	printf("the original function output: %s",str1);
-	return (0);
+	t_list	*tmp;
+
+	while (*alst)
+	{
+		tmp = (*alst)->next;
+		ft_lstdelone(alst, del);
+		*alst = tmp;
+	}
 }

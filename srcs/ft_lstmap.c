@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_striteri.c                                 :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/31 19:39:29 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/31 21:12:02 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/05 15:17:01 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/07 15:23:40 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_strcap(unsigned int length, char *s)
+static void	ft_delete(void *content, size_t content_size)
 {
-	int i;
+	(void)content_size;
+	ft_memdel(&content);
+}
 
-	(void)length;
-	i = 0;
-	while (s[i])
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*node;
+	t_list	*head;
+
+	head = NULL;
+	while (lst)
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
-			s[i] -= 32;
-		i++;
+		node = f(lst);
+		if (!head)
+			head = node;
+		if (!node)
+		{
+			ft_lstdel(&head, ft_delete);
+			return (NULL);
+		}
+		while (head->next)
+			head = head->next;
+		head->next = node;
+		lst = lst->next;
 	}
+	return (head);
 }
-
-int		main(void)
-{
-	char p[50];
-
-	ft_strcpy(p, "abcdef");
-	printf("|%s|\n", p);
-	ft_striteri(p, &ft_strcap);
-	printf("|%s|\n", p);
-	return (0);
-}
-

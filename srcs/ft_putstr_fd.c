@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strmap.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/31 21:07:26 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/02 14:39:39 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/03 18:19:51 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/07 13:14:42 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	strlow(char c)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-		c = '1';
-	return (c);
-}
+	int	i;
 
-int		main(void)
-{
-	printf("|%s|\n", ft_strmap("aBCD", &strlow));
-	return (0);
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

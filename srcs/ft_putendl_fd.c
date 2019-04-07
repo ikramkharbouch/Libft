@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memcpy.c                                   :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 16:44:38 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 18:28:22 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/03 18:24:41 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/06 23:30:22 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	main(void)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	char original[50];
-	char new[50];
-	
-	strcpy(original, "12345");
-	ft_memcpy(new, original, 3);
-	new[3] = '\0';
-	printf("%s\n", new);
-	return (0);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

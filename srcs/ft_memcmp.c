@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 09:42:21 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/30 21:11:57 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/06 16:38:23 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
+	i = 0;
 	while (*str1 && *str2 && *str1 == *str2 && i < n)
 	{
 		str1++;

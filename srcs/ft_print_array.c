@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memccpy.c                                  :+:      :+:    :+:   */
+/*   ft_print_array.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/28 18:42:23 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 19:37:46 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/04 14:34:18 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/04 15:29:37 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main()
+void	ft_print_array(char **array, int debug)
 {
-	char 	src[] = "12345";
-	char 	dst[10];
-	char	*result;
+	int	i;
 
-	ft_bzero(dst, 10);
-	ft_memset(dst, '*', 9);
-	result = ft_memccpy(dst, src, '3', 5);
-	printf("|%s|\n", result);
-	return (0);
+	i = 0;
+	while (array[i])
+	{
+		if (debug)
+			ft_putchar('|');
+		ft_putstr(array[i++]);
+		if (debug)
+			ft_putchar('|');
+		ft_putchar('\n');
+	}
 }

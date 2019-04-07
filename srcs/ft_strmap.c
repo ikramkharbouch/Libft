@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 20:12:33 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/03 17:43:01 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/06 22:47:16 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char		*ft_strmap(char const *s, char (*f)(char))
 	char	*str;
 	int		i;
 
-	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	str = ft_strnew(ft_strlen(s));
 	i = 0;
 	while (s[i])
 	{
-		str[i] = (*f)(s[i]);
+		str[i] = f(s[i]);
 		i++;
 	}
 	return (str);

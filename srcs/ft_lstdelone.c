@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strjoin.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 14:49:02 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/02 15:46:54 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/05 13:16:16 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/07 15:02:41 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main(void)
+void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-	printf("|%s|\n", ft_strjoin("234", "123"));
-	printf("|%s|\n", ft_strjoin("", "123"));
-	printf("|%s|\n", ft_strjoin("234", ""));
-	printf("|%s|\n", ft_strjoin("", ""));
-	printf("|%s|\n", ft_strjoin("234-1", "123"));
-	printf("|%s|\n", ft_strjoin("234-1   ", "123   "));
-	printf("|%s|\n", ft_strjoin(" ", " "));
-	return (0);
+	t_list	*node;
+
+	node = *alst;
+	del(node->content, node->content_size);
+	*alst = node->next;
+	ft_memdel((void **)&node);
 }

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strcat.c                                   :+:      :+:    :+:   */
+/*   ft_find_digits_len.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/29 12:45:54 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/30 15:23:37 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/04 16:50:41 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/07 13:26:21 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main(void)
+int			ft_find_digits_len(int n)
 {
-	char *str;
-	char *dest;
+	int count;
 
-	dest = (char *)malloc(sizeof(char) * 7);
-	str = (char *)malloc(sizeof(char) * 7);
-	ft_strcpy(str, "hello");
-	ft_strcpy(dest, "test");
-	printf("|%s|\n", ft_strcat(dest, str));
-	//printf("|%s|\n", strcat(dest, str));
-	return (0);
+	count = 0;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		n = n / 10;
+		count++;
+	}
+	return (count);
 }

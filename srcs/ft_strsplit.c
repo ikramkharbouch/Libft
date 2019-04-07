@@ -6,35 +6,54 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 13:20:27 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/03 17:44:33 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/07 13:16:04 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+static char	*next_word(char *str, char c)
 {
-	char	**arr;
-	char	*tmp;
-	int		i;
-	int		j;
+	while (*str && *str == c)
+		str++;
+	return (str);
+}
 
-	arr = (char **)malloc(sizeof(char *) * (ft_count_words(s) + 1));
-	tmp = ft_strtrim(s);
-	i = 0;
-	while (*tmp)
+int			word_length(char *str, char c)
+{
+	int		len;
+
+	len = 0;
+	while (*str && *str != c)
 	{
-		j = 0;
-		while (!ft_is_whitespace(*tmp))
-		{
-			arr[i][j] = *tmp;
-			j++;
-			tmp++;
-		}
-		if (j)
-			i++;
-		tmp++;
+		len++;
+		str++;
 	}
-	free(tmp);
-	return (arr);
+	return (len);
+}
+
+char		**ft_strsplit(char const *s, char c)
+{
+	char	**result;
+	int		words;
+	int		length;
+	int		i;
+
+	words = ft_count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (i < words)
+	{
+		s = next_word((char *)s, c);
+		length = word_length((char *)s, c);
+		result[i] = ft_strsub(s, 0, length);
+		if (!result[i])
+			return (ft_del_array(result));
+		s += length;
+		i++;
+	}
+	result[i] = NULL;
+	return (result);
 }

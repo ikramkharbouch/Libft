@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strequ.c                                   :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 15:54:00 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/02 15:54:02 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/04 18:46:16 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/04 18:56:49 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/libft.h"
 
-int         main(void)
+char	*ft_strrev(char *str)
 {
-    char    p1[50];
-    char    p2[50];
+	int		i;
+	int		j;
+	char	tmp;
 
-    ft_strcpy(p1, "1234");
-    ft_strcpy(p2, "1234");
-    printf("%d\n", ft_strequ(p1, p2));
-    printf("%d\n", ft_strcmp(p1, p2));
-    return (0);
+	i = 0;
+	j = ft_strlen(str) - 1;
+	while (i < j)
+	{
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i++;
+		j--;
+	}
+	return (str);
 }

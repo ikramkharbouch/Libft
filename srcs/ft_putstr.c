@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 17:46:09 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/03 17:47:52 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/07 13:14:25 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,4 @@ void	ft_putstr(char const *s)
 		ft_putchar(s[i]);
 		i++;
 	}
-}	
+}

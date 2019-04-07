@@ -6,35 +6,30 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 21:58:06 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/02 22:37:38 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/07 13:42:13 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int			ft_is_whitespace(char c)
+static char		*next_word(char *str, char c)
 {
-	return (c == ' ' || c == '\n' || c == '\t');
-}
-
-char		*ft_strltrim(char *str)
-{
-	while (ft_is_whitespace(*str))
+	while (*str && *str == c)
 		str++;
 	return (str);
 }
 
-int			ft_count_words(char *str)
+int				ft_count_words(char const *str, char c)
 {
-	int		count;
+	int			count;
 
 	count = 0;
 	while (*str)
 	{
-		str = ft_strltrim(str);
+		str = next_word((char *)str, c);
 		if (*str)
 		{
-			while (*str && !ft_is_whitespace(*str))
+			while (*str && *str != c)
 				str++;
 			count++;
 		}

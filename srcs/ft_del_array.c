@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memcmp.c                                   :+:      :+:    :+:   */
+/*   ft_del_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/29 09:50:41 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/29 10:03:14 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/04 15:48:22 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/04 15:56:00 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		main()
+void	*ft_del_array(char **array)
 {
-   	char *str;
-	char *str1;
+	int	i;
 
-	str = "hello";
-	str1 = "aello";
-	printf("%d\n", memcmp(str, str1, 10));
-	printf("%d\n", ft_memcmp(str, str1, 10));
-	return (0);
+	i = 0;
+	while (array[i])
+		ft_strdel(&array[i++]);
+	return (NULL);
 }

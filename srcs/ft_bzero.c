@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/28 13:59:00 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/28 23:25:13 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/06 17:02:57 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, '\0', n);
+	ft_memset(s, 0, n);
 }
