@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main_ft_atoi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 19:16:07 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 17:15:09 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/30 20:39:18 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/30 21:08:38 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		main(void)
 {
-	int	len;
-	int i;
+	char s1[50];
 
-	len = ft_strlen(s);
-	i = 0;
-	while (i <= len)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return (NULL);
+	ft_strcpy(s1, "       12345");
+	printf("%d\n", ft_atoi(s1));
+	printf("%d\n", atoi(s1));
+	return (0);
 }

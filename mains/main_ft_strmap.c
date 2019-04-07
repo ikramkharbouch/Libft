@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main_ft_strmap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 19:16:07 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 17:15:09 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/31 21:07:26 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/02 14:39:39 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	strlow(char c)
 {
-	int	len;
-	int i;
+	if (c >= 'a' && c <= 'z')
+		c = '1';
+	return (c);
+}
 
-	len = ft_strlen(s);
-	i = 0;
-	while (i <= len)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return (NULL);
+int		main(void)
+{
+	printf("|%s|\n", ft_strmap("aBCD", &strlow));
+	return (0);
 }

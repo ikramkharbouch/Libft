@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main_ft_strjoin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 19:16:07 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 17:15:09 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/02 14:49:02 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/02 15:46:54 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		main(void)
 {
-	int	len;
-	int i;
-
-	len = ft_strlen(s);
-	i = 0;
-	while (i <= len)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return (NULL);
+	printf("|%s|\n", ft_strjoin("234", "123"));
+	printf("|%s|\n", ft_strjoin("", "123"));
+	printf("|%s|\n", ft_strjoin("234", ""));
+	printf("|%s|\n", ft_strjoin("", ""));
+	printf("|%s|\n", ft_strjoin("234-1", "123"));
+	printf("|%s|\n", ft_strjoin("234-1   ", "123   "));
+	printf("|%s|\n", ft_strjoin(" ", " "));
+	return (0);
 }

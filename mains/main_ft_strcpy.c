@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main_ft_strcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 19:16:07 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 17:15:09 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/29 11:17:06 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/30 15:16:23 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		main()
 {
-	int	len;
-	int i;
+	char *str;
+	char dest[50];
 
-	len = ft_strlen(s);
-	i = 0;
-	while (i <= len)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return (NULL);
+	str = "hello";
+	printf("|%s|\n",ft_strcpy(dest, str));
+	printf("|%s|\n",strcpy(dest, str));
+	return (0);
 }

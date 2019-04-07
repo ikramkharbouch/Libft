@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main_ft_strlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 19:16:07 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 17:15:09 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/29 10:20:27 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/29 10:25:39 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		main()
 {
-	int	len;
-	int i;
+	char *s;
 
-	len = ft_strlen(s);
-	i = 0;
-	while (i <= len)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return (NULL);
+	s = "12345";
+	printf("%zu\n", ft_strlen(s));
+	printf("%zu\n", strlen(s));
+	return (0);
 }

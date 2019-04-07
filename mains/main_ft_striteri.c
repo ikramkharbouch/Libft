@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main_ft_striteri.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 19:16:07 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 17:15:09 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/03/31 19:39:29 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/03/31 21:12:02 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_strcap(unsigned int length, char *s)
 {
-	int	len;
 	int i;
 
-	len = ft_strlen(s);
+	(void)length;
 	i = 0;
-	while (i <= len)
+	while (s[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
+		if (s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
 		i++;
 	}
-	return (NULL);
 }
+
+int		main(void)
+{
+	char p[50];
+
+	ft_strcpy(p, "abcdef");
+	printf("|%s|\n", p);
+	ft_striteri(p, &ft_strcap);
+	printf("|%s|\n", p);
+	return (0);
+}
+
