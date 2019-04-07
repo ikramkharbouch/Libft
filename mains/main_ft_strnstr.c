@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main_ft_strnstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 20:06:45 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 17:33:24 by ikrkharb         ###   ########.fr       */
+/*   Created: 2019/04/07 22:24:12 by ikrkharb          #+#    #+#             */
+/*   Updated: 2019/04/07 22:39:18 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	main(void)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	char *res1;
+	char *res2;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	while (*str1 && *str2 && *str1 == *str2)
-	{
-		str1++;
-		str2++;
-	}
-	return (*str1 - *str2);
+	/*
+	res1 = strnstr("see FF your FF return FF now FF", "FF", 31);
+	res2 = ft_strnstr("see FF your FF return FF now FF", "FF", 31);
+
+	if (res1 == res2)
+		printf("OK\n");
+	else
+		printf("KO\n");
+	*/
+
+	res1 = strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", 9);
+	res2 = ft_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", 9);
+
+	if (res1 == res2)
+		printf("OK\n");
+	else
+		printf("KO\n");
+	return (0);
 }

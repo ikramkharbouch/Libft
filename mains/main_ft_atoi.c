@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 20:39:18 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/03/30 21:08:38 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/07 21:09:45 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		main(void)
 {
 	char s1[50];
 
-	ft_strcpy(s1, "       12345");
+	ft_strcpy(s1, "  \n \t -            1234554");
 	printf("%d\n", ft_atoi(s1));
 	printf("%d\n", atoi(s1));
 	return (0);

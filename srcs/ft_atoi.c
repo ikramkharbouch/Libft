@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 20:33:44 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 13:08:16 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/07 21:03:14 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int s;
-	int sign;
+	int			i;
+	__int128_t	s;
+	__int128_t	sign;
 
 	i = 0;
 	s = 0;
-	sign = 1;
-	if (str[0] == '-')
-	{
-		sign = -1;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v' || str[i] == '\r'
+			|| str[i] == '\f' || str[i] == '\n')
 		i++;
-	}
-	while (str[i] == '+' || str[i] == '-' || str[i] == ' ' || str[i] == '\t')
+	sign = str[i] == '-' ? -1 : 1;
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		s = s * 10 + str[i] - '0';
 		i++;
 	}
-	return (s * sign);
+	if (s * sign >= (__int128_t)9223372036854775807LL)
+		return ((int)9223372036854775807LL);
+	if (s * sign < (__int128_t)(-9223372036854775807LL))
+		return (0);
+	return ((int)(s * sign));
 }
