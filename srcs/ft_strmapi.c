@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 14:30:32 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/06 22:47:49 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/07 23:33:52 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 
 	str = ft_strnew(ft_strlen(s));
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

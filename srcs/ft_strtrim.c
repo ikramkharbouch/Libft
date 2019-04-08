@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 15:58:04 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/06 22:21:01 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:46:37 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char				*ft_strtrim(char const *s)
 	unsigned int	start;
 	size_t			len;
 
-	if (!s)
-		return (ft_strnew(0));
 	tmp = s;
 	start = 0;
 	while (ft_is_whitespace(*s))
@@ -27,6 +25,8 @@ char				*ft_strtrim(char const *s)
 		start++;
 		s++;
 	}
+	if (!*s)
+		return (ft_strnew(0));
 	while (*s)
 		s++;
 	s--;

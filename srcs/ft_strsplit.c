@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 13:20:27 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 13:16:04 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:47:04 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*next_word(char *str, char c)
 	return (str);
 }
 
-int			word_length(char *str, char c)
+static int	word_length(char *str, char c)
 {
 	int		len;
 

@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 23:44:48 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 21:12:02 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/07 23:53:23 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	ft_putnbr_fd(int n, int fd)
 		nb = nb * -1;
 	}
 	if (nb < 10)
-		ft_putchar_fd((nb + '0'), fd);
+		ft_putchar_fd(nb + '0', fd);
 	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
 	}
 }

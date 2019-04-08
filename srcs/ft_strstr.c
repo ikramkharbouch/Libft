@@ -6,7 +6,7 @@
 /*   By: ikrkharb <ikrkharb@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 14:07:19 by ikrkharb          #+#    #+#             */
-/*   Updated: 2019/04/07 20:21:01 by ikrkharb         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:49:24 by ikrkharb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char		*ft_strstr(const char *haystack, const char *needle)
 {
 	char	*tmp;
 	size_t	i;
-
 
 	if (needle && !(needle[0]))
 		return ((char *)haystack);
