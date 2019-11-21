@@ -3,6 +3,7 @@ Libft is a project that makes you create a library of useful functions in C.
 
 ## Running the tests
 You can use any of these functions in your C projects.
+
 You can compile your main program in this way :
 
 ```bash
